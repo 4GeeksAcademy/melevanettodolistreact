@@ -12,11 +12,10 @@ const [Tareas, setTareas] = useState([]);
 
 	return (
 		<div className="Container">
-
-				<h1>Mis Tareas</h1>
+            <h1>Lista de TODO</h1>
 			  <ul>
 				<li>
-					<input type="text" placeholder="Indica la tarea"
+					<input type="text" placeholder=" Indica la tarea"
 					onChange={(Event) => setInputValue(Event.target.value)}
 					value={inputValue}
 					onKeyUp={(Event) => { if (Event.key === "Enter") 
@@ -33,10 +32,12 @@ const [Tareas, setTareas] = useState([]);
 						{item}
 						<button onClick={() => setTareas(Tareas.filter((t, tindex) => index != tindex))}>🗑</button>
 					</li>
+					
 				))}
 				
 				
 				</ul>
+				<div>{Tareas.length}Tareas</div>
 		</div>
 	);
 };
